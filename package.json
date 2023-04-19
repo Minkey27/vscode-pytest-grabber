@@ -39,5 +39,9 @@
     "mocha": "^10.2.0",
     "typescript": "^4.9.5",
     "@vscode/test-electron": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Minkey27/vscode-pytest-grabber"
   }
 }
