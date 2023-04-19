@@ -43,5 +43,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Minkey27/vscode-pytest-grabber"
-  }
+  },
+  "publisher": "Minkey27"
 }
