@@ -9,15 +9,13 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:pytest-grabber.generatePath"
-  ],
+  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "pytest-grabber.generatePath",
-        "title": "Copy pytest path to clipboard"
+        "title": "pytest-grabber: Copy pytest path to clipboard"
       }
     ]
   },
