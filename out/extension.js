@@ -30,13 +30,13 @@ function activate(context) {
             if (classNameMatch && methodNameMatch) {
                 const className = classNameMatch[1];
                 const methodName = methodNameMatch[1];
-                const filePath = vscode.workspace.asRelativePath(document.uri);
+                const filePath = vscode.workspace.asRelativePath(document.uri, false);
                 vscode.env.clipboard.writeText(`${filePath}::${className}::${methodName}`);
                 vscode.window.showInformationMessage('Path copied to clipboard');
             }
             else if (classNameMatch) {
                 const className = classNameMatch[1];
-                const filePath = vscode.workspace.asRelativePath(document.uri);
+                const filePath = vscode.workspace.asRelativePath(document.uri, false);
                 vscode.env.clipboard.writeText(`${filePath}::${className}`);
                 vscode.window.showInformationMessage('Path copied to clipboard');
             }

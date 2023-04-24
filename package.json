@@ -2,7 +2,7 @@
   "name": "pytest-grabber",
   "displayName": "pytest-grabber",
   "description": "Grab the full_path, class_name and method for easy pasting",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.77.0"
   },

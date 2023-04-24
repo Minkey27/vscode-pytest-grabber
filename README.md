@@ -16,4 +16,8 @@ None so far.
 
 Initial release of pytest-grabber!
 
+### 1.0.1
+
+- Fixed an issue where relative path would include the root directory of the workspace if one was set.
+
 **Enjoy!**
