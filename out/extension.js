@@ -9,6 +9,9 @@ function activate(context) {
     let disposable = vscode.commands.registerCommand('pytest-grabber.generatePath', () => {
         const editor = vscode.window.activeTextEditor;
         if (editor) {
+            const config = vscode.workspace.getConfiguration('pytest-grabber');
+            const separator = config.get('separator') || '${separator}';
+            const prefixCmd = config.get('prefix_cmd') || '';
             const document = editor.document;
             const selection = editor.selection;
             const line = document.lineAt(selection.active.line);
@@ -31,13 +34,13 @@ function activate(context) {
                 const className = classNameMatch[1];
                 const methodName = methodNameMatch[1];
                 const filePath = vscode.workspace.asRelativePath(document.uri, false);
-                vscode.env.clipboard.writeText(`${filePath}::${className}::${methodName}`);
+                vscode.env.clipboard.writeText(`${prefixCmd}${filePath}${separator}${className}${separator}${methodName}`);
                 vscode.window.showInformationMessage('Path copied to clipboard');
             }
             else if (classNameMatch) {
                 const className = classNameMatch[1];
                 const filePath = vscode.workspace.asRelativePath(document.uri, false);
-                vscode.env.clipboard.writeText(`${filePath}::${className}`);
+                vscode.env.clipboard.writeText(`${prefixCmd}${filePath}${separator}${className}`);
                 vscode.window.showInformationMessage('Path copied to clipboard');
             }
             else {

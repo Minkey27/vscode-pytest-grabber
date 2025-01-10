@@ -1,8 +1,8 @@
 {
   "name": "pytest-grabber",
   "displayName": "pytest-grabber",
-  "description": "Grab the full_path, class_name and method for easy pasting",
-  "version": "1.0.1",
+  "description": "Grab the full_path, class_name and method for easy pasting. You can even add the command as prefix!",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.77.0"
   },
@@ -17,7 +17,23 @@
         "command": "pytest-grabber.generatePath",
         "title": "pytest-grabber: Copy pytest path to clipboard"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Pytest Grabber Configuration",
+      "properties": {
+        "pytest-grabber.separator": {
+          "type": "string",
+          "default": "::",
+          "description": "Separator used for the generated pytest path (e.g., '::' or '#')."
+        },
+        "pytest-grabber.prefixCmd": {
+          "type": "string",
+          "default": "",
+          "description": "Command to prefix the generated pytest path (e.g., 'pytest '). Include a space!"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
