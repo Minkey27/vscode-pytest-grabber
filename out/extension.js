@@ -11,7 +11,7 @@ function activate(context) {
         if (editor) {
             const config = vscode.workspace.getConfiguration('pytest-grabber');
             const separator = config.get('separator') || '${separator}';
-            const prefixCmd = config.get('prefix_cmd') || '';
+            const prefixCmd = config.get('prefixCmd') || '';
             const document = editor.document;
             const selection = editor.selection;
             const line = document.lineAt(selection.active.line);

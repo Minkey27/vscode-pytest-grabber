@@ -11,7 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 			const config = vscode.workspace.getConfiguration('pytest-grabber');
 			const separator = config.get<string>('separator') || '${separator}';
 
-			const prefixCmd = config.get<string>('prefix_cmd') || '';
+			const prefixCmd = config.get<string>('prefixCmd') || '';
 
 			const document = editor.document;
 			const selection = editor.selection;
