@@ -24,7 +24,7 @@ function activate(context) {
                     methodNameMatch = line.text.match(/def\s+(\w+)\(/);
                 }
                 if (!classNameMatch) {
-                    classNameMatch = line.text.match(/class\s+(\w+)\(/);
+                    classNameMatch = line.text.match(/class\s+(\w+)(\()?/);
                 }
                 if (classNameMatch) {
                     break;
