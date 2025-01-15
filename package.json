@@ -30,7 +30,7 @@
         "pytest-grabber.prefixCmd": {
           "type": "string",
           "default": "",
-          "description": "Command to prefix the generated pytest path (e.g., 'pytest '). Include a space!"
+          "description": "Command to prefix the generated pytest path (e.g., 'pytest')."
         }
       }
     }
