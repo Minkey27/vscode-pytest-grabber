@@ -20,4 +20,9 @@ Initial release of pytest-grabber!
 
 - Fixed an issue where relative path would include the root directory of the workspace if one was set.
 
+### 1.2.1
+
+- Added support for test methods that don't have a parent class.
+- Fixed adding a whitespace after the prefixCmd.
+
 **Enjoy!**

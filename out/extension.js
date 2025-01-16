@@ -29,7 +29,9 @@ function activate(context) {
         const separator = config.get('separator') || '${separator}';
         // Get prefixCmd and add a space if it doesn't have it.
         let prefixCmd = config.get('prefixCmd') || '';
-        prefixCmd = prefixCmd.endsWith(" ") ? prefixCmd : prefixCmd + " ";
+        if (prefixCmd && !prefixCmd.endsWith(" ")) {
+            prefixCmd += " ";
+        }
         const filePath = vscode.workspace.asRelativePath(document.uri, false);
         const className = classNameMatch?.[1];
         const methodName = methodNameMatch?.[1];
@@ -52,7 +54,7 @@ function activate(context) {
             }
             let clipboard = "";
             if (prefixCmd)
-                clipboard += prefixCmd + " ";
+                clipboard += prefixCmd;
             clipboard += pathComponents.join(separator);
             vscode.env.clipboard.writeText(clipboard);
             vscode.window.showInformationMessage('Path copied to clipboard');

@@ -32,7 +32,9 @@ export function activate(context: vscode.ExtensionContext) {
 		const separator = config.get<string>('separator') || '${separator}';
 		// Get prefixCmd and add a space if it doesn't have it.
 		let prefixCmd = config.get<string>('prefixCmd') || '';
-		prefixCmd = prefixCmd.endsWith(" ") ? prefixCmd : prefixCmd + " ";
+		if (prefixCmd && !prefixCmd.endsWith(" ")) {
+			prefixCmd += " ";
+		}
 		const filePath = vscode.workspace.asRelativePath(document.uri, false);
 		const className = classNameMatch?.[1];
 		const methodName = methodNameMatch?.[1];
@@ -55,7 +57,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			let clipboard = "";
-			if (prefixCmd) clipboard += prefixCmd + " ";
+			if (prefixCmd) clipboard += prefixCmd;
 
 			clipboard += pathComponents.join(separator);
 
