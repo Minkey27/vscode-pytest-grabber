@@ -29,7 +29,7 @@ export function activate(context: vscode.ExtensionContext) {
 				}
 
 				if (!classNameMatch) {
-					classNameMatch = line.text.match(/class\s+(\w+)(\()?/);
+					classNameMatch = line.text.match(/class\s+(\w+)([\(:])/);
 				}
 
 				if (classNameMatch) {
