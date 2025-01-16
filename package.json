@@ -2,7 +2,7 @@
   "name": "pytest-grabber",
   "displayName": "pytest-grabber",
   "description": "Grab the full_path, class_name and method for easy pasting. You can even add the command as prefix!",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "engines": {
     "vscode": "^1.77.0"
   },
@@ -30,7 +30,7 @@
         "pytest-grabber.prefixCmd": {
           "type": "string",
           "default": "",
-          "description": "Command to prefix the generated pytest path (e.g., 'pytest '). Include a space!"
+          "description": "Command to prefix the generated pytest path (e.g., 'pytest ')."
         }
       }
     }
